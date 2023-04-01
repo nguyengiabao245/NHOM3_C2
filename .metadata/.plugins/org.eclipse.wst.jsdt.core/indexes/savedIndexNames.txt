@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\TienPhat\OneDrive\Máy tính\duan1\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1067094681.index
+1568717487.index
+141136397.index
+1375158511.index
+3190608066.index
+4026370908.index
+62904761.index

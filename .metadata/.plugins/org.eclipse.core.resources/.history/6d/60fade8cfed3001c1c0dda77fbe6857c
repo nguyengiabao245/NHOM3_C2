@@ -1,0 +1,17 @@
+package com.glabshop.dao;
+
+import java.util.List;
+
+import com.glabshop.entity.Brand;
+
+public class BrandDAO {
+	Brand findById(Integer id);
+
+	List<Category> findAll();
+
+	Category create(Category entity);
+
+	void update(Category entity);
+
+	Category delete(Integer id);
+}

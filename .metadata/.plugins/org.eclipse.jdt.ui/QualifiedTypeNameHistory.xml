@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="javax.websocket.server.PathParam"/>
+<fullyQualifiedTypeName name="com.glabshop.service.FavouriteService"/>
+<fullyQualifiedTypeName name="com.glabshop.dao.BrandDAO"/>
+<fullyQualifiedTypeName name="com.glabshop.entity.Brand"/>
+<fullyQualifiedTypeName name="org.springframework.data.repository.query.Param"/>
+<fullyQualifiedTypeName name="org.springframework.data.jpa.repository.JpaRepository"/>
+<fullyQualifiedTypeName name="com.glabshop.entity.Product"/>
+<fullyQualifiedTypeName name="com.glabshop.repository.ProductRepository"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
+<fullyQualifiedTypeName name="com.glabshop.service.CartService"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.PathVariable"/>
+<fullyQualifiedTypeName name="org.springframework.data.domain.Sort"/>
+<fullyQualifiedTypeName name="org.springframework.data.domain.Sort.Direction"/>
+<fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+</qualifiedTypeNameHistroy>

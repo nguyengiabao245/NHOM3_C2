@@ -1,0 +1,5 @@
+package com.glabshop.service;
+
+public class FavouriteService {
+
+}

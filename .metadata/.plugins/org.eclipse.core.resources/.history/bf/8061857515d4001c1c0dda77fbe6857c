@@ -1,0 +1,269 @@
+<%@ page pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="f"%>
+
+<br />
+<div id="container" style="margin-top: 100px">
+	<div class="container">
+		<h3 class="title" style="margin-left: 5%">
+
+			<b>( ${list.size()} </b> sản phẩm)
+		</h3>
+		<!--  -->
+		<div class="text-center">
+            <div class="typeProducts">
+        <div class="row" style="width: 100%">
+            <div class="col-xs-3"><h2>Footwear</h2></div>
+            <div class="col-xs-6">
+                                <div class="bootstrap-tagsinput">
+                                                                                                                                                                                                                    </div>
+                            </div>
+            <div class="col-xs-3">
+                <div class="typeFilter text-left">
+                    <a href="" class="filterToggle"><span class="fa fa-filter"></span>Filter</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="menuFilter">
+        <a href="" class="filterClose"><span class="fa fa-close"></span></a>
+        <div class="filterIcon"><span class="fa fa-filter"></span>Filter</div>
+        <div class="filterItems">
+            <div class="dropdown">
+                <div class="btn btn-default btn-xs dropdown-toggle" type="button" id="sortUsers" data-toggle="dropdown">
+                    Sort
+                </div>
+                <ul class="dropdown-menu" role="menu" aria-labelledby="sortUsers">
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.glab.vn/product/apparel?sub_cat=long-sleeves&amp;sortBy=c.price_asc">Price: lowest first <i class="fa fa-sort-amount-asc" aria-hidden="true"></i></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.glab.vn/product/apparel?sub_cat=long-sleeves&amp;sortBy=c.price_desc">Price: highest first <i class="fa fa-sort-amount-desc" aria-hidden="true"></i></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.glab.vn/product/apparel?sub_cat=long-sleeves&amp;sortBy=a.created_at_desc">New to Old <i class="fa fa-sort-amount-desc" aria-hidden="true"></i></a></li>
+                    <li role="presentation"><a role="menuitem" tabindex="-1" href="https://www.glab.vn/product/apparel?sub_cat=long-sleeves&amp;sortBy=a.created_at_asc">Old to New <i class="fa fa-sort-amount-desc" aria-hidden="true"></i></a></li>
+                </ul>
+            </div>
+
+				<div class="dropdown">
+					<a href="#" class="toggle__auth val-selected">
+					 <div class="btn btn-default btn-xs dropdown-toggle" type="button">
+                    Sort
+                </div>
+                </a>
+					<div class="dropdown-up-style hide">
+						<div class="dropdown__inner">
+							<c:choose>
+								<c:when test="${empty sessionScope.user }">
+									<ul class="dropdown__inner">
+										<li><a href="/account/login">Price: lowest first <i class="fa fa-sort-amount-asc" aria-hidden="true"></i></a></li>
+										<li><a href="/account/register">Price: highest first <i class="fa fa-sort-amount-asc" aria-hidden="true"></i></a></li>
+										<li><a href="/account/forgot">New to Old <i class="fa fa-sort-amount-asc" aria-hidden="true"></i></a></li>
+										<li><a href="/account/forgot">Old to New <i class="fa fa-sort-amount-asc" aria-hidden="true"></i></a></li>
+									</ul>
+								</c:when>
+								<c:otherwise>
+									<ul class="dropdown__inner" style="background-color: #FFF">
+										<li style="border-bottom: 2px solid #EEEEEE;"><a
+											href="/account/logout">Đăng xuất</a></li>
+										<li style="border-bottom: 2px solid #EEEEEE;"><a
+											href="/account/change">Thay đổi mật khẩu</a></li>
+										<li style="border-bottom: 2px solid #EEEEEE;"><a
+											href="/account/edit">Cập nhật thông tin cá nhân</a></li>
+										<li style="border-bottom: 2px solid #EEEEEE;"><a
+											href="/order/list">Lịch sử đơn hàng</a></li>
+										<li><a href="/order/items">Danh sách sản phẩm đã mua</a></li>
+									</ul>
+								</c:otherwise>
+							</c:choose>
+						</div>
+					</div>
+				</div>
+
+            <div class="filterItem">
+                <a href="">Brand <span class="toggleSub fa fa-plus"></span></a>
+                                <ul class="clearfix">
+                      
+
+						<c:forEach var="c" items="${brands}">
+							 <li><a href="/product/footwear/${c.nameBrand}">${c.nameBrand}</a></li>
+						</c:forEach>
+                  
+                                    </ul>
+                            </div>
+            <div class="filterItem">
+                <a href="">Sizes <span class="toggleSub fa fa-plus"></span></a>
+                                    <ul class="clearfix">
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=150">5.5K</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=149">6C</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=135">18.5 CM</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=134">1.5Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=130">2Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=122">9CM</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=1">4 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=141">1Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=139">1 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=124">3 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=123">3.5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=2">4.5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=3">5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=4">5.5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=5">6 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=6">6.5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=7">7 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=8">7.5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=9">8 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=10">8.5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=11">9 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=12">9.5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=13">10 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=128">13cm</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=14">10.5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=15">11 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=16">11.5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=17">12 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=18">12.5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=60">13 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=113">13.5 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=101">14 US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=27">3.5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=28">4W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=29">4.5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=30">5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=31">5.5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=32">6W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=33">6.5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=34">7W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=35">7.5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=36">8W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=37">8.5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=38">9W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=39">9.5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=40">10W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=41">10.5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=42">11W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=117">13.5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=43">11.5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=118">12.5W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=79">12W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=114">14W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=115">13W US</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=44">3.5Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=104">3Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=45">4Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=46">4.5Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=47">5Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=48">5.5Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=49">6Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=50">6.5Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=51">7Y</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=94">32</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=108">36.5</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=109">37</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=110">35.5</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=102">34</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=100">36</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=95">33.5</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=76">38</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=75">39</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=52">40</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=78">41.5</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=53">41</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=54">42</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=55">43</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=58">44</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=112">29.5CM</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=111">37.5</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=87">12cm</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=106">17CM</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=105">18CM</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=88">14cm</a></li>
+                                                    <li><a href="https://www.glab.vn/product/footwear?size=89">16cm</a></li>
+                                            </ul>
+                            </div>
+            <div class="filterItem">
+                <a href="">Price <span class="toggleSub fa fa-plus"></span></a>
+                <ul class="clearfix" style="padding: 0 0 20px 50px;">
+                    <li style="width: 90%;">
+                        <p>
+                            <input type="text" id="amount" readonly style="border:0; color:#f6931f; font-weight:bold; width: 100%;">
+                        </p>
+                        <div id="slider-range"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+        </div>
+        <!-- End filter -->
+		<c:forEach var="p" items="${list}">
+	<div class="col-sm-3" style="padding: 5px 5px 5px 5px">
+		<div class="thumbnail" style="max-height:380px">
+
+			<a href="/product/detail/${p.id}" >
+				
+					<c:choose>
+						<c:when test="${p.discount > 0 }">
+						<p style="background-color: red; width: 30px; height: 30px; text-align: right; float: right;position: relative;border-radius: 30px">
+							<span style="margin-left: -28px;margin-top: 5px;font-size: 14px;color: #fff;position: absolute;"> -<f:formatNumber
+									value="${p.discount}" type="percent" />
+							</span>
+						</p> 
+						</c:when>
+						<c:otherwise>
+						
+						</c:otherwise>
+					</c:choose>
+				
+				<img style="margin-right: 30px;margin-top: 5px" class="estore-prod" src="/static/images/products/${p.image}" title="${p.name}">
+			</a>
+
+			<div class="caption" >
+				<p style="padding: 3px; text-align: center; color: black">
+					<b>${p.name}</b>
+				</p>
+				<p
+					style="padding: 3px; font-size: 15px; text-align: center; font-weight: bold;">
+					<c:choose>
+						<c:when test="${p.discount <= 0 }">
+							<span style="text-align: left; font-weight: bold;color:red">đ <f:formatNumber
+									value="${p.unitPrice}" pattern="#,###" /></span>
+						</c:when>
+						<c:otherwise>
+							<span
+								style="text-decoration: line-through; color: Gray; font-weight: bold;">đ <f:formatNumber value="${p.unitPrice}" pattern="#,###" /> 
+							</span>
+						</c:otherwise>
+					</c:choose>
+					<c:choose>
+						<c:when test="${p.discount > 0 }">
+							<span style="margin-left: 5px; font-weight: bold;color:red"> <f:formatNumber
+									value="${p.unitPrice * (1 - p.discount)}" pattern="#,###" />
+								VNĐ
+							</span>
+						</c:when>
+						<c:otherwise>
+
+						</c:otherwise>
+					</c:choose>
+
+				</p>
+				<br /> <br />
+				<div data-id="${p.id}" class="pull-center text-center">
+					<button class="btn btn-sm btn-success btn-add-to-cart"
+											data-toggle="modal" data-target="#myModals">
+											<i class="glyphicon glyphicon-shopping-cart"> Mua</i>
+										</button>
+										
+				</div>
+			</div>
+		</div>
+	</div>
+
+</c:forEach>
+	</div>
+</div>
+<jsp:include page="favourite.jsp" />
+<jsp:include page="dialog_cart.jsp" />
+<jsp:include page="dialog.jsp" />

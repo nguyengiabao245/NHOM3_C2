@@ -1,0 +1,61 @@
+<%@ page pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jstl/fmt_rt" prefix="f"%>
+
+<c:set var="cart" value="${sessionScope['scopedTarget.cartService']}" />
+<div class="header__cart dropdown">
+				<a href="" class="val-selected"><span
+					class="fa fa-heart" style="font-size: 20px"></span></a>
+
+
+				<c:choose>
+
+					<c:when test="${cart.amount > 0}">
+						<div class="dropdown-up-style active">
+							<div class="dropdown__inner">
+								<h2 class="text-uper font-700 fs-16">favourite cart</h2>
+								<div class="header__cart--item">
+									<c:forEach var="prod"
+										items="${sessionScope['scopedTarget.cartService'].items}">
+
+
+										<a href="" class="header__cart--item clearfix">
+											<div class="pull-left wrap-img">
+												<img src="/static/images/products/${prod.image}" alt="">
+											</div>
+
+											<div class="overflow-all">
+												<p class="text-uper fs-15 font-700">${prod.name}</p>
+												<p class="product-type text-uper font-500 fs-13 mgB-10"></p>
+												<p class="pull-right font-700 fs-12">
+													đ
+													<f:formatNumber value="${prod.unitPrice}" pattern="#,###" />
+												</p>
+											</div>
+										</a>
+
+									</c:forEach>
+
+									<div class="text-center">
+										
+										<a href="/product/favo" class="text-uper btn-checkout ">Xem
+											sản phẩm yêu thích</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</c:when>
+
+					<c:otherwise>
+						<div class="dropdown-up-style hide">
+							<div class="dropdown__inner">
+								<h2 class="text-uper font-700 fs-16">favourite cart</h2>
+								<p class="font-500 fs-15 mgB-15" style="text-align: center">Không
+									có sản phẩm nào !</p>
+							</div>
+						</div>
+					</c:otherwise>
+
+				</c:choose>
+
+			</div>

@@ -1,0 +1,5 @@
+package com.glabshop.repository;
+
+public interface ProductRepository {
+
+}

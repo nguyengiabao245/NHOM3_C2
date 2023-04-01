@@ -1,0 +1,155 @@
+<%@ page pageEncoding="utf-8"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="s"%>
+
+<br/>
+<div class="container" style="margin-top:100px">
+	<div class=dang-nhap>
+		<h2>ĐĂNG KÝ</h2>
+		<h4 class="label label-success">${message}</h4>
+		<form:form action="/account/register" modelAttribute="form"
+			enctype="multipart/form-data">
+			<div class="form-group">
+				<label>Tên đăng nhập:</label>
+				<form:input path="id" class="form-control" required="required" pattern=".{6,}" title="Tên đăng nhập phải từ 6 ký tự trở lên"/>
+			</div>
+			<div class="form-group">
+				<label>Mật khẩu:</label>
+				<form:input path="password" type="password" class="form-control" required="required" pattern=".{6,}" title="Mật khẩu phải từ 6 ký tự trở lên"/>
+			</div>
+			<div class="form-group">
+				<label>Họ tên:</label>
+				<form:input path="fullname" class="form-control" required="required" pattern=".{6,}" title="Họ tên phải từ 6 ký tự trở lên"/>
+			</div>
+			<div class="form-group">
+				<label>Số điện thoại:</label>
+				<form:input path="telephone" type="number" class="form-control" required="required"  title="Số điện thoại gồm 10 số"/>
+			</div>
+			<div class="form-group">
+				<label>Email:</label>
+				<form:input path="email" class="form-control"  required="required" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Email không hợp lệ"/>
+			</div>
+			<div class="form-group">
+				<label>Ảnh:</label> <input type="file" name="photo_file" />
+				<form:hidden path="photo" class="form-control" />
+			</div>
+			<button class="btn btn-success" >Đăng ký</button>
+			<a class="btn btn-default" href="/account/register"><s:message code="act.button.reset" /></a>
+		</form:form>
+	</div>
+</div>
+
+
+<div id="container">
+        <div class="userauth">
+    <div class="userauth__inner">
+        <h3 class="text-center text-uper font-700 fs-30 mgB-45">create account</h3>
+        <form class="form-horizontal" role="form" method="POST" action="https://www.glab.vn/register">
+            <input type="hidden" name="_token" value="xzCqNfcC2Q0GvOK0ZmysHSUba4oxn7xKgy9cQJ0A">
+            <div class="frm-item">
+                <input id="name" type="text" placeholder="Name" name="name" value="" required autofocus>
+                            </div>
+            <div class="frm-item">
+                <input id="email" type="email" placeholder="Email" name="email" value="" required>
+                            </div>
+            <div class="frm-item">
+                <input id="password" type="password" placeholder="Password" name="password" required>
+                            </div>
+            <div class="frm-item">
+                <input id="password-confirm" type="password" placeholder="Confirm Password" name="password_confirmation" required>
+            </div>
+            <div class="frm-item">
+                <button type="submit" class="userauth__btn">create</button>
+            </div>
+        </form>
+        <div class="text-center mgT-40">
+            <p class="font-500 fs-16 text-uper mgB-10 text-decor"><a href="https://www.glab.vn/login">you have a account ?</a></p>
+            <p class="font-500 fs-16 text-uper text-decor"><a href="https://www.glab.vn/password/forgot">forgot your password ?</a></p>
+        </div>
+    </div>
+</div>
+    </div>
+    <footer class="clearfix">
+    <div class="footer__logo">
+        <a href="https://www.glab.vn"><img src="/themes/v1/icons/logo.svg" alt=""></a>
+    </div>
+    <di class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <form class="get__news">
+                <input type="text" placeholder="Sign up to good news">
+                <button type="submit"><span class="icon-enter-arrow"></span></button>
+            </form>
+        </div>
+    </di>
+    <div class="row">
+        <div class="col-sm-8 col-sm-offset-2">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="items__footer">
+                        <p class="item__title">Service & Support</p>
+                        <p><a href="">glabvn@gmail.com</a></p>
+                        <p><a href="">+84945378809</a></p>
+                        <p><a href="https://goo.gl/maps/nFxWKN4ihUWKviNT6">Locations</a></p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="items__footer">
+                        <p class="item__title">Info</p>
+                        <p><a href="https://www.glab.vn/page/consignment-term">Consignment Terms</a></p>
+                        <p><a href="https://www.glab.vn/page/about">Connect with Us</a></p>
+                        <p><a href="https://www.glab.vn/page/delivery-return">Delivery and Returns</a></p>
+                        <p><a href="https://www.glab.vn/page/faq">FAQs</a></p>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="items__footer">
+                        <p class="item__title">Follow Us</p>
+                        <p><a href="https://www.facebook.com/glab.vn/">Facebook</a></p>
+                        <p><a href="https://www.instagram.com/glab.vn/">Instagram</a></p>
+                        <p><a href="https://www.youtube.com/user/giaytv">Youtube</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">Copyright © 2018 GLAB.VN</div>
+
+    <div class="container hide">
+        <div class="footer__left">
+            <a href=""><img src="/themes/v1/icons/logo-footer.svg"></a>
+        </div>
+        <div class="footer__menu">
+            <ul>
+                <li><a href="">home</a></li>
+                <li><a href="">store</a></li>
+                <li><a href="">CONSIGNMENT</a></li>
+                <li><a href="https://www.glab.vn/page/about">CONNECT WITH US</a></li>
+                <li><a href="">LOCATION</a></li><li><a href="">POLICY &amp; TERM</a></li>
+            </ul>
+
+        </div><div class="footer__right">
+
+            <div class="footer__right__social"><a href=""><span class="icon-facebook2"></span></a><a href=""><span class="icon-306026"></span></a><a href=""><span class="icon-play"></span></a>
+            </div><form id="frm-email" class="">
+                <div class="frm-icon">
+                    <input type="text" placeholder="YOUR EMAIL">
+                    <button type="submit" class="icon-frm"><span class="icon-search"></span></button>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+<style>
+.dang-nhap{
+	background-color: white;
+	padding: 30px 120px;
+	margin: 0 auto;
+	width: 60%;
+}
+</style>
+
+
+
+

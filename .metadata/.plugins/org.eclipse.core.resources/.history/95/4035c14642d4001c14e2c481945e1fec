@@ -1,0 +1,61 @@
+<%@ page pageEncoding="utf-8"%>
+
+<br />
+<div id="container"
+	style="margin-top: 100px; background-color: #FFFFFF !important">
+	<div class="container">
+		<div class="row mgT-30">
+		<div class="col-md-3"></div>
+			<div class="col-md-6">
+			<h3 class="text-center text-uper font-700 fs-30 mgB-45">Forgot
+				password</h3>
+			<h4 class="label label-success">${message}</h4>
+			<form action="/account/forgot" method="post">
+				<div class="form-group">
+					<label>Tên tài khoản:</label> <input name="id" class="form-control" />
+				</div>
+				<div class="form-group">
+					<label>Email:</label> <input name="email" class="form-control" />
+				</div>
+				<div class="form-group">
+					<button class="btn btn-success">Gửi thông tin</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+
+
+<div id="container"
+	style="margin-top: 100px; background-color: #FFFFFF !important">
+	<div class="container">
+		<div class="row mgT-30">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<h3 class="text-center text-uper font-700 fs-30 mgB-45">Forgot
+					password</h3>
+				<form class="form-horizontal" role="form" method="POST"
+					action="https://www.glab.vn/contract/find">
+					<input type="hidden" name="_token"
+						value="xzCqNfcC2Q0GvOK0ZmysHSUba4oxn7xKgy9cQJ0A">
+					<div class="frm-item">
+						<input id="code" type="text" name="code" value=""
+							placeholder="Code" required autofocus> <small
+							class="form-text text-muted">Please input code same: <strong>HD000001-CH01-001</strong>
+							or <strong>CH01-001</strong> or <strong>001</strong>.
+						</small>
+					</div>
+					<div class="frm-item">
+						<input id="phone" type="text" value="" placeholder="Phone"
+							name="phone" required>
+					</div>
+					<div class="frm-item">
+						<button type="submit" class="userauth__btn">Find</button>
+					</div>
+				</form>
+			</div>
+			<div class="col-md-3"></div>
+		</div>
+	</div>
+</div>
